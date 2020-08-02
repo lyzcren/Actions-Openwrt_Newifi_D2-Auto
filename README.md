@@ -2,6 +2,8 @@
 
 使用 GitHub Actions 云编译Openwrt固件
 
+感谢[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)提供的GitHub Actions云编译代码
+
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 ### 默认编译
