@@ -1,4 +1,4 @@
-# Actions-OpenWrt
+# Actions-OpenWrt-Auto
 
 使用 GitHub Actions 云编译Openwrt固件
 
