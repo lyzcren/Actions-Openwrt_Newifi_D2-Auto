@@ -6,14 +6,16 @@
 
 ### 默认编译
 
-- Newifi-D2固件，酸酸乳Plus+、Passwall、SmartDNS、PPTP服务端、京东签到服务、AdGuardHome、Uhttpd
+- Newifi-D2固件，SSRPlus+、Passwall、SmartDNS、PPTP服务端、京东签到服务、AdGuardHome、Uhttpd
 - 用户名：root 密码：password 管理IP：192.168.99.1
-- 已开启SSH，可自定义选择编译，自动生成`.config`
+- 自动周五编译
+ -如已有`.config`文件自动编译，请单击[使用此模板](https://github.com/cslxtx/Actions-openwrt-newifi_D2/generate)
+- 如需开启SSH的选择自定义编译，请单击[使用此模板](https://github.com/cslxtx/Actions-Openwrt_Newifi_D2/generate)
 
 ## 使用方法
 
-- 单击[使用此模板](https://github.com/cslxtx/Actions-Openwrt_Newifi_D2/generate)按钮创建一个新的存储库。
-- 点击右上角`☆Star`，编译会自动开始。进度可以在Actions页面上查看。
+- 单击[使用此模板](https://github.com/cslxtx/Actions-Openwrt_Newifi_D2-Auto/generate)按钮创建一个新的存储库。
+- 自动周五编译，进度可以在Actions页面上查看。
 - 编译完成后，点击Actions页面右上角的`Artifacts`按钮以下载固件压缩包文件。
 
 ### 提示
