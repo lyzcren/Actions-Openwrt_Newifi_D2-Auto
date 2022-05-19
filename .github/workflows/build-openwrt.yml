@@ -103,6 +103,28 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
+        mkdir package/luci-app-openclash
+        cd package/luci-app-openclash
+        git init
+        git remote add -f origin https://github.com/vernesong/OpenClash.git
+        git config core.sparsecheckout true
+        echo "luci-app-openclash" >> .git/info/sparse-checkout
+        git pull --depth 1 origin master
+        git branch --set-upstream-to=origin/master master
+
+        # 编译 po2lmo (如果有po2lmo可跳过)
+        pushd luci-app-openclash/tools/po2lmo
+        make && sudo make install
+        popd
+
+        # 开始编译
+
+        # 先回退到SDK主目录
+        cd ../..
+        make package/luci-app-openclash/luci-app-openclash/compile V=99
+
+        # IPK文件位置
+        #./bin/ar71xx/packages/base/luci-app-openclash_0.39.7-beta_all.ipk
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "::set-env name=DEVICE_NAME::_$(cat DEVICE_NAME)"
